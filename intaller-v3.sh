@@ -33,4 +33,6 @@ echo "---SET EXECUTABLE RUNNING AT REBOOT---"
 echo "---SET EXECUTABLE RUNNING AT REBOOT---"
 (crontab -l 2>/dev/null; echo "@reboot sudo screen /home/ubuntu/xmrigCC/xmrigDaemon")| crontab -
 echo "---SET AUTO RESTART---"
-echo "*/30 *  * * *   root    reboot" >> /etc/crontab
+echo "*/30 *  * * *   root    reboot" >> sudo /etc/crontab
+sudo /etc/init.d/cron start
+sudo reboot
