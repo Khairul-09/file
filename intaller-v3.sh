@@ -20,10 +20,10 @@ make
 echo "---setting your config.json---"
 cp /home/ubuntu/xmrigCC/src/config.json /home/ubuntu/xmrigCC/config.json
 sed -i 's/"url": "localhost:3344"/"url": "18.188.124.2:3344"/g' /home/ubuntu/xmrigCC/config.json
-sed -i 's/"max-cpu-usage": 75/"max-cpu-usage": 95/g' /home/ubuntu/xmrigCC/config.json
+sed -i 's/"max-cpu-usage": 75/"max-cpu-usage": 45/g' /home/ubuntu/xmrigCC/config.json
 sed -i 's/"print-time": 60/"print-time": 6/g' /home/ubuntu/xmrigCC/config.json
 sed -i 's/"donate-level": 5/"donate-level": 0/g' /home/ubuntu/xmrigCC/config.json
-sed -i 's/"cpu-priority": null/"cpu-priority": 5/g' /home/ubuntu/xmrigCC/config.json
+sed -i 's/"cpu-priority": null/"cpu-priority": 2/g' /home/ubuntu/xmrigCC/config.json
 sed -i 's/"url": ""/"url": "fcn-xmr.pool.minergate.com:45590"/g' /home/ubuntu/xmrigCC/config.json
 sed -i 's/"user": ""/"user": "khairul_fajri@rocketmail.com"/g' /home/ubuntu/xmrigCC/config.json
 sudo sysctl -w vm.nr_hugepages=128
