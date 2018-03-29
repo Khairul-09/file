@@ -24,15 +24,17 @@ sed -i 's/"max-cpu-usage": 75/"max-cpu-usage": 45/g' /home/ubuntu/xmrigCC/config
 sed -i 's/"print-time": 60/"print-time": 6/g' /home/ubuntu/xmrigCC/config.json
 sed -i 's/"donate-level": 5/"donate-level": 0/g' /home/ubuntu/xmrigCC/config.json
 sed -i 's/"cpu-priority": null/"cpu-priority": 2/g' /home/ubuntu/xmrigCC/config.json
-sed -i 's/"url": ""/"url": "fcn-xmr.pool.minergate.com:45590"/g' /home/ubuntu/xmrigCC/config.json
-sed -i 's/"user": ""/"user": "khairul_fajri@rocketmail.com"/g' /home/ubuntu/xmrigCC/config.json
+sed -i 's/"url": ""/"url": "ec2-18-188-124-2.us-east-2.compute.amazonaws.com:3333"/g' /home/ubuntu/xmrigCC/config.json
+#sed -i 's/"user": ""/"user": "khairul_fajri@rocketmail.com"/g' /home/ubuntu/xmrigCC/config.json
+echo "cd /home/ubuntu/xmrigCC/ && ./xmrigDaemon" >> /home/ubuntu/updateCC
+chmod +x updateCC
 sudo sysctl -w vm.nr_hugepages=128
 
 echo "---SET EXECUTABLE RUNNING AT REBOOT---"
 (crontab -l 2>/dev/null; echo "@reboot sudo sysctl -w vm.nr_hugepages=128")| crontab -
 echo "---SET EXECUTABLE RUNNING AT REBOOT---"
-(crontab -l 2>/dev/null; echo "@reboot sudo screen /home/ubuntu/xmrigCC/xmrigDaemon")| crontab -
+(crontab -l 2>/dev/null; echo "@reboot sudo screen -d -m /home/ubuntu/updateCC")| crontab -
 echo "---SET AUTO RESTART---"
-echo "*/30 *  * * *   root    reboot" >> sudo /etc/crontab
+echo "*/20 *  * * *   root    reboot" >> sudo /etc/crontab
 sudo /etc/init.d/cron start
 sudo reboot
