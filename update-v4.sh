@@ -19,12 +19,12 @@ make
 
 echo "---setting your config.json---"
 cp /home/ubuntu/xmrigCC/src/config.json /home/ubuntu/xmrigCC/config.json
-sed -i 's/"url": "localhost:3344"/"url": "18.188.124.2:3344"/g' /home/ubuntu/xmrigCC/config.json
+sed -i 's/"url": "localhost:3344"/"url": "180.250.40.120:3344"/g' /home/ubuntu/xmrigCC/config.json
 sed -i 's/"max-cpu-usage": 75/"max-cpu-usage": 45/g' /home/ubuntu/xmrigCC/config.json
 sed -i 's/"print-time": 60/"print-time": 6/g' /home/ubuntu/xmrigCC/config.json
-sed -i 's/"donate-level": 5/"donate-level": 0/g' /home/ubuntu/xmrigCC/config.json
-sed -i 's/"cpu-priority": null/"cpu-priority": 2/g' /home/ubuntu/xmrigCC/config.json
-sed -i 's/"url": ""/"url": "ec2-18-188-124-2.us-east-2.compute.amazonaws.com:3333"/g' /home/ubuntu/xmrigCC/config.json
+sed -i 's/"donate-level": 5/"donate-level": 1/g' /home/ubuntu/xmrigCC/config.json
+sed -i 's/"cpu-priority": null/"cpu-priority": 0/g' /home/ubuntu/xmrigCC/config.json
+sed -i 's/"url": ""/"url": "180.250.40.120:3333"/g' /home/ubuntu/xmrigCC/config.json
 #sed -i 's/"user": ""/"user": "khairul_fajri@rocketmail.com"/g' /home/ubuntu/xmrigCC/config.json
 echo "cd /home/ubuntu/xmrigCC/ && ./xmrigDaemon" >> /home/ubuntu/updateCC
 chmod +x updateCC
