@@ -25,10 +25,13 @@ sed -i 's/"print-time": 60/"print-time": 6/g' /home/ubuntu/xmrigCC/config.json
 sed -i 's/"donate-level": 5/"donate-level": 1/g' /home/ubuntu/xmrigCC/config.json
 sed -i 's/"cpu-priority": null/"cpu-priority": 0/g' /home/ubuntu/xmrigCC/config.json
 sed -i 's/"url": ""/"url": "180.250.40.120:3333"/g' /home/ubuntu/xmrigCC/config.json
+sed -i 's/"port": 0/"port": 6464/g' /home/ubuntu/xmrigCC/config.json
+
 #sed -i 's/"user": ""/"user": "khairul_fajri@rocketmail.com"/g' /home/ubuntu/xmrigCC/config.json
 echo "cd /home/ubuntu/xmrigCC/ && ./xmrigDaemon" >> /home/ubuntu/updateCC
 chmod +x updateCC
 sudo sysctl -w vm.nr_hugepages=128
+sudo chmod +x /etc/rc.local
 
 echo "---SET EXECUTABLE RUNNING AT REBOOT---"
 (crontab -l 2>/dev/null; echo "@reboot sudo sysctl -w vm.nr_hugepages=128")| crontab -
