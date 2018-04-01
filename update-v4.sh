@@ -23,7 +23,7 @@ sed -i 's/"url": "localhost:3344"/"url": "180.250.40.120:3344"/g' /home/ubuntu/x
 sed -i 's/"max-cpu-usage": 75/"max-cpu-usage": 45/g' /home/ubuntu/xmrigCC/config.json
 sed -i 's/"print-time": 60/"print-time": 6/g' /home/ubuntu/xmrigCC/config.json
 sed -i 's/"donate-level": 5/"donate-level": 1/g' /home/ubuntu/xmrigCC/config.json
-sed -i 's/"cpu-priority": null/"cpu-priority": 0/g' /home/ubuntu/xmrigCC/config.json
+#sed -i 's/"cpu-priority": null/"cpu-priority": 0/g' /home/ubuntu/xmrigCC/config.json
 sed -i 's/"url": ""/"url": "180.250.40.120:3333"/g' /home/ubuntu/xmrigCC/config.json
 sed -i 's/"port": 0/"port": 6464/g' /home/ubuntu/xmrigCC/config.json
 
