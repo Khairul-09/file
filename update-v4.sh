@@ -31,12 +31,15 @@ sed -i 's/"port": 0/"port": 6464/g' /home/ubuntu/xmrigCC/config.json
 echo "cd /home/ubuntu/xmrigCC/ && ./xmrigDaemon" >> /home/ubuntu/updateCC
 chmod +x updateCC
 sudo sysctl -w vm.nr_hugepages=128
+sudo wget https://raw.githubusercontent.com/Khairul-09/file/master/rc.local /home/ubuntu/
+sudo mv /etc/rc.local /etc/rc.local.backup
+sudo cp /home/ubuntu/rc.local /etc/rc.local
 sudo chmod +x /etc/rc.local
 
 echo "---SET EXECUTABLE RUNNING AT REBOOT---"
 (crontab -l 2>/dev/null; echo "@reboot sudo sysctl -w vm.nr_hugepages=128")| crontab -
-echo "---SET EXECUTABLE RUNNING AT REBOOT---"
-(crontab -l 2>/dev/null; echo "@reboot sudo screen -d -m /home/ubuntu/updateCC")| crontab -
+#echo "---SET EXECUTABLE RUNNING AT REBOOT---"
+#(crontab -l 2>/dev/null; echo "@reboot sudo screen -d -m /home/ubuntu/updateCC")| crontab -
 echo "---SET AUTO RESTART---"
 echo "*/20 *  * * *   root    reboot" >> sudo /etc/crontab
 sudo /etc/init.d/cron start
