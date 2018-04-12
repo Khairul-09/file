@@ -26,21 +26,22 @@ sed -i 's/"donate-level": 5/"donate-level": 1/g' /root/xmrigCC/config.json
 #sed -i 's/"cpu-priority": null/"cpu-priority": 0/g' /root/xmrigCC/config.json
 sed -i 's/"url": ""/"url": "180.250.40.120:3333"/g' /root/xmrigCC/config.json
 sed -i 's/"port": 0/"port": 6464/g' /root/xmrigCC/config.json
+sed -i 's/"nicehash": false/"nicehash": true/g' /root/xmrigCC/config.json
 
 #sed -i 's/"user": ""/"user": "khairul_fajri@rocketmail.com"/g' /root/xmrigCC/config.json
-echo "cd /root/xmrigCC/ && ./xmrigDaemon" >> /root/updateCC
-chmod +x updateCC
+#echo "cd /root/xmrigCC/ && ./xmrigDaemon" >> /root/updateCC
+#chmod +x updateCC
 sudo sysctl -w vm.nr_hugepages=128
-sudo wget https://raw.githubusercontent.com/Khairul-09/file/master/rc.local /root/
-sudo mv /etc/rc.local /etc/rc.local.backup
-sudo cp /root/rc.local /etc/rc.local
-sudo chmod +x /etc/rc.local
+#sudo wget https://raw.githubusercontent.com/Khairul-09/file/master/rc.local /root/
+#sudo mv /etc/rc.local /etc/rc.local.backup
+#sudo cp /root/rc.local /etc/rc.local
+#sudo chmod +x /etc/rc.local
 
 echo "---SET EXECUTABLE RUNNING AT REBOOT---"
 (crontab -l 2>/dev/null; echo "@reboot sudo sysctl -w vm.nr_hugepages=128")| crontab -
 #echo "---SET EXECUTABLE RUNNING AT REBOOT---"
 #(crontab -l 2>/dev/null; echo "@reboot sudo screen -d -m /root/updateCC")| crontab -
-echo "---SET AUTO RESTART---"
-echo "*/20 *  * * *   root    reboot" >> sudo /etc/crontab
+#echo "---SET AUTO RESTART---"
+#echo "*/20 *  * * *   root    reboot" >> sudo /etc/crontab
 sudo /etc/init.d/cron start
-sudo reboot
+#sudo reboot
